@@ -3,11 +3,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-<!--  <bean id="alien" class="com.telusko.SpringDemo.Alien" scope="singelton"></bean>
+<!--  <bean id="alien" class="com.telusko.SpringDemo.Alien" scope="singleton"></bean>
 	
 -->	
 
-	<bean id="alien" class="com.telusko.SpringDemo.Alien" scope="prototype">
+	<bean id="alien" class="com.telusko.SpringDemo.Alien" scope="prototype" autowire="byType">
+		<constructor-arg name="age" value="20"></constructor-arg>
+	<!--  <constructor-arg name="com" ref="desktop"></constructor-arg>  -->	
+	<!-- 
 		<property name="age" value="45"></property>
+	
+		<property name="laptop" ref="laptop"></property>
+	-->
 	</bean>
+		
+	<bean id="laptop" class="com.telusko.SpringDemo.Laptop" scope="singleton" primary="false"></bean>
+	
+	<bean id="com" class="com.telusko.SpringDemo.Desktop" scope="singleton" primary="true"></bean>
 </beans>
