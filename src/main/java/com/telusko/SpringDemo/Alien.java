@@ -2,7 +2,7 @@ package com.telusko.SpringDemo;
 
 public class Alien {
 	
-	int age;
+	private int age;
 	
 	public Alien() {
 		
@@ -17,5 +17,10 @@ public class Alien {
 	public void setAge(int age) {		
 		System.out.println("Age has been assigned !!");
 		this.age = age;
+	}
+	
+	public int getAge() {
+		
+		return this.age;
 	}
 }
